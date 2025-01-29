@@ -21,7 +21,7 @@ void SC18IS606::configSPI(SPI_Mode mode, SPI_Speed speed) {
 
 //sending data via SPI
 void SC18IS606::spiTransfer(uint8_t cs, const uint8_t *dataToSend, uint8_t len, uint8_t *dataReceived) {
-    // Hlavní SPI přenos
+
     Wire.beginTransmission(_address);
     Wire.write(cs);
     for (uint8_t i = 0; i < len; i++) {
@@ -36,7 +36,7 @@ void SC18IS606::spiTransfer(uint8_t cs, const uint8_t *dataToSend, uint8_t len, 
         dataReceived[i] = (Wire.available()) ? Wire.read() : 0xFF;
     }
 
-    // Přidání extra 0xFF bajtů
+
     uint8_t dummyOut[1] = {0xFF};
     uint8_t dummyIn[1];
 
@@ -61,7 +61,6 @@ void SC18IS606::spiTransfer(uint8_t cs, const uint8_t *dataToSend, uint8_t len, 
 void SC18IS606::selectPinMode(uint8_t pin, GPIOPinMode mode) {
     if (pin > 3) return;
 
-    // Nastavit pin do požadovaného režimu
     _pinConfig &= ~(0b11 << (pin * 2));    // Reset bits for a given pin
     _pinConfig |= (mode << (pin * 2));      // Set new mode
 
