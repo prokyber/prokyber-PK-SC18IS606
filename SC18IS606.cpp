@@ -52,7 +52,7 @@ void SC18IS606::spiTransfer(uint8_t cs, const uint8_t *dataToSend, uint8_t len, 
         dummyIn[0] = (Wire.available()) ? Wire.read() : 0xFF;
 
         if (dummyIn[0] == 0xFF) {
-            break;  // Karta připravena
+            break;
         }
     }
 }
