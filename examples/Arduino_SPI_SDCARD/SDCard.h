@@ -26,10 +26,10 @@ private:
     uint8_t waitForResponse();
 
     // Constants for commands
-    static const uint8_t CMD0  = 0x40;
-    static const uint8_t CMD8  = 0x48;
-    static const uint8_t CMD55 = 0x77;
-    static const uint8_t ACMD41 = 0x69;
+    #define CMD0  0x40
+    #define CMD8  0x48
+    #define CMD55 0x77
+    #define ACMD41  0x69
 };
 
 #endif
