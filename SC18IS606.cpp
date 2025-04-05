@@ -6,7 +6,7 @@
 SC18IS606::SC18IS606(uint8_t address) : 
     _address(address),
     _gpioState(0x00),
-    _pinConfig(0xFF) // All pins set to Open-Drain as default
+    _pinConfig(0xFF) // All pins set to Open-Drain
 {
 }
 
