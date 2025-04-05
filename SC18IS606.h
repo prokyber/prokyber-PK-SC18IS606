@@ -44,11 +44,11 @@ public:
 
 private:
     //Command bytes
-    static const uint8_t CONFIG_SPI_CMD = 0xF0;
-    static const uint8_t IDLE_CMD = 0xF2;
-    static const uint8_t GPIO_WRITE_CMD = 0xF4;
-    static const uint8_t GPIO_ENABLE_CMD = 0xF6;
-    static const uint8_t GPIO_CONFIGURATION_CMD = 0xF7;
+    #define CONFIG_SPI_CMD  0xF0
+    #define IDLE_CMD  0xF2
+    #define GPIO_WRITE_CMD  0xF4
+    #define GPIO_ENABLE_CMD  0xF6
+    #define GPIO_CONFIGURATION_CMD  0xF7
 
     // Private variables
     uint8_t _address;
