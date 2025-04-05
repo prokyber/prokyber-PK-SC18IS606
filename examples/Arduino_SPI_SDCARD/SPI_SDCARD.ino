@@ -96,5 +96,4 @@ void setup() {
 }
 
 void loop() {
-  // nic
 }
